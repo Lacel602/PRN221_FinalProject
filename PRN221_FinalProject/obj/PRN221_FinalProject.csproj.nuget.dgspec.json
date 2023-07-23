@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj": {}
+    "C:\\Users\\dell\\OneDrive\\Desktop\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj": {}
   },
   "projects": {
-    "D:\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj": {
+    "C:\\Users\\dell\\OneDrive\\Desktop\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\OneDrive\\Desktop\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj",
         "projectName": "PRN221_FinalProject",
-        "projectPath": "D:\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN221_FinalProject\\PRN221_FinalProject\\obj\\",
+        "projectPath": "C:\\Users\\dell\\OneDrive\\Desktop\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\OneDrive\\Desktop\\PRN221_FinalProject\\PRN221_FinalProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

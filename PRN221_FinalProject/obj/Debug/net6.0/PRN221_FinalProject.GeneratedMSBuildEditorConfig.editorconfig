@@ -5,65 +5,64 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PRN221_FinalProject
 build_property.RootNamespace = PRN221_FinalProject
-build_property.ProjectDir = D:\PRN221_FinalProject\PRN221_FinalProject\
+build_property.ProjectDir = C:\Users\dell\OneDrive\Desktop\PRN221_FinalProject\PRN221_FinalProject\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\PRN221_FinalProject\PRN221_FinalProject
+build_property.MSBuildProjectDirectory = C:\Users\dell\OneDrive\Desktop\PRN221_FinalProject\PRN221_FinalProject
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Admin/AddProduct.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Admin/AddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRkUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Admin/ManageProduct.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Admin/ManageProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Error.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Home/Index.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Index.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Login/Index.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Login/Register.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Login/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Privacy.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/_ViewImports.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/_ViewStart.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Shared/_Layout.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zd2rrk36xr
 
-[D:/PRN221_FinalProject/PRN221_FinalProject/Pages/Shared/_NavLayout.cshtml]
+[C:/Users/dell/OneDrive/Desktop/PRN221_FinalProject/PRN221_FinalProject/Pages/Shared/_NavLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4fjr2gimhi
