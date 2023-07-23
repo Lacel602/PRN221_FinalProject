@@ -1,0 +1,30 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Login.RegisterModel
+@{
+    Layout = "_NavLayout";
+}
+<h1>Register</h1>
+
+<div style="margin: 0 32% 0 32%">
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="Username" class="form-control" value="@Model.Username" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="Password" class="form-control" value="@Model.Password" />
+        </div>
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="FullName" class="form-control" value="@Model.FullName" />
+        </div>
+        <br />
+        @if (TempData["ErrorMess"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMess"]</div>
+        }
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a href="/Login" class="btn btn-secondary">Back to Login</a>
+    </form>
+</div>

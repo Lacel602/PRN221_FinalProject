@@ -1,0 +1,47 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Admin.AddProductModel
+@{
+    Layout = "_NavLayout";
+}
+<h3>Add New Product</h3>
+
+<form method="post" asp-page-handler="Add">
+    <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" class="form-control" id="productName" name="ProductInput.ProductName" required>
+    </div>
+@*    <div class="form-group">
+        <label for="supplierId">Supplier:</label>
+        <select class="form-control" id="supplierId" name="ProductInput.SupplierId" required>
+            <option value="">Select Supplier</option>
+            @foreach (var supplier in Model.Suppliers)
+            {
+                <option value="@supplier.SupplierId">@supplier.CompanyName</option>
+            }
+        </select>
+    </div>*@
+    <div class="form-group">
+        <label for="categoryId">Category:</label>
+        <select class="form-control" id="categoryId" name="ProductInput.CategoryId" required>
+            <option value="">Select Category</option>
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.CategoryId">@category.CategoryName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="unitPrice">Unit Price:</label>
+        <input type="number" step="0.01" class="form-control" id="unitPrice" name="ProductInput.UnitPrice" required>
+    </div>
+    <div class="form-group">
+        <label for="productImage">Product Image:</label>
+        <input type="text" class="form-control" id="productImage" name="ProductInput.ProductImage" required>
+    </div>
+    <button style="margin-top: 20px" type="submit" class="btn btn-primary">Add Product</button>
+</form>
+@if (TempData["ErrorMessAdd"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessAdd"]</div>
+}
+<hr />

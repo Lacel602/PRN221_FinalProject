@@ -1,0 +1,37 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Login.IndexModel
+@{
+    Layout = "_NavLayout";
+}
+
+
+<h1>Login</h1>
+
+<div style="margin: 0 32% 0 32%">
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="Username" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="Password" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <p>@Model.ErrorMessage</p>
+        </div>
+        @if (TempData["Mess"] != null)
+        {
+            <div class="alert">@TempData["Mess"]</div>
+        }
+        <button type="submit" class="btn btn-primary">Login</button>        
+        <a href="/Login/Register" class="btn btn-secondary">Register</a>
+    </form>
+</div>
+
+
+
+
+
+
