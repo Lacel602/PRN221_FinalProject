@@ -36,9 +36,14 @@ namespace PRN221_FinalProject.Pages.Admin
                 }
                 else
                 {
-                    string Message = "Your account is not permitted to edit!";
-                    TempData["Mess"] = Message;
-                    return RedirectToPage("/login/index");
+                        OrderDetails = _context.OrderDetails.Include(m => m.Product).Where(x => x.OrderId == orderId).ToList();
+
+                        if (OrderDetails == null)
+                        {
+                            TempData["ErrorMessUpdate"] = "Product not found!";
+                            return RedirectToPage("/Admin/ManagerOrder");
+                        }
+                        return Page();
                 }
             }
             else
