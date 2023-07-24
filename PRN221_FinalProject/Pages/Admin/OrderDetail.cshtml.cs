@@ -15,8 +15,7 @@ namespace PRN221_FinalProject.Pages.Admin
             _context = context;
         }
         public int id { get; set; }
-        [BindProperty]
-        public OrderDetail OrderDetail { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
         public IActionResult OnGet(int orderId)
         {
@@ -26,9 +25,9 @@ namespace PRN221_FinalProject.Pages.Admin
                 var account = _context.Accounts.FirstOrDefault(a => a.AccountId == accountId);
                 if (account.Type.Contains("Staff"))
                 {
-                    
-                    
-                    if (details == null)
+                    OrderDetails = _context.OrderDetails.Include(m => m.Product).Where(x => x.OrderId == orderId).ToList();
+
+                    if (OrderDetails == null)
                     {
                         TempData["ErrorMessUpdate"] = "Product not found!";
                         return RedirectToPage("/Admin/ManagerOrder");
