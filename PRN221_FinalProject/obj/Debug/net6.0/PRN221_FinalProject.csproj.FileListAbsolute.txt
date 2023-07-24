@@ -257,3 +257,4 @@ C:\Users\dell\OneDrive\Desktop\PRN221_FinalProject\PRN221_FinalProject\obj\Debug
 C:\Users\dell\OneDrive\Desktop\PRN221_FinalProject\PRN221_FinalProject\obj\Debug\net6.0\PRN221_FinalProject.pdb
 C:\Users\dell\OneDrive\Desktop\PRN221_FinalProject\PRN221_FinalProject\obj\Debug\net6.0\PRN221_FinalProject.genruntimeconfig.cache
 C:\Users\dell\OneDrive\Desktop\PRN221_FinalProject\PRN221_FinalProject\obj\Debug\net6.0\ref\PRN221_FinalProject.dll
+D:\PRN221_FinalProject\PRN221_FinalProject\bin\Debug\net6.0\Newtonsoft.Json.dll

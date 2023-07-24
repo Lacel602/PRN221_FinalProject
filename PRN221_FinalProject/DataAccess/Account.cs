@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace PRN221_FinalProject.DataAccess;
@@ -20,7 +21,7 @@ public partial class Account
     public string? Email { get; set; }
 
     public string? Type { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();

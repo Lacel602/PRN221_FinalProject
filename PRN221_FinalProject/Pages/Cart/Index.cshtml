@@ -1,0 +1,65 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Cart.IndexModel
+@{
+}
+
+@{
+    Layout = "_NavLayout";
+}
+<h1 style="margin-top: 30px; text-align:center">Your Cart</h1>
+
+@if (Model.Carts != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Product Image</th>
+                <th>Quantity</th>
+                <th>Money</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Carts)
+            {
+                <tr>
+                    <td>@item.ProductId</td>
+                    <td>@item.Product.ProductName</td>
+                    <td>@string.Format("{0:N0} VND", item.Product.UnitPrice)</td>
+                    <td style="width:150px; height:150px">
+                        <img class="img-fluid w-100" src="@item.Product.ProductImage" alt="...">
+                    </td>
+                    <td>
+                        <form method="post" asp-page-handler="QuantityEdit" asp-route-productId="@item.ProductId">
+                            <button type="submit" class="btn" name="quantityChange" value="-1">-</button>
+                            @item.Quantity
+                            <button type="submit" class="btn" name="quantityChange" value="1">+</button>
+                        </form>
+                    </td>
+                    <td>@string.Format("{0:N0} VND", item.Product.UnitPrice * item.Quantity)</td>
+                    <td>
+                        <form method="post" asp-page-handler="RemoveFromCart" asp-route-productId="@item.ProductId">
+                            <button style="width:73px" type="submit" class="btn btn-danger btn-sm">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+    <br />
+    <br />
+    <h4>Your cart is empty</h4>
+}
+
+@if (TempData["ErrorMessUpdate"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessUpdate"]</div>
+}
+<a href="/Home/Index" class="btn btn-primary">Return to home</a>

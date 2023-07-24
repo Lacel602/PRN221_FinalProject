@@ -2,6 +2,8 @@ using PRN221_FinalProject.DataAccess;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PRN221_FinalProject.Session;
+using Microsoft.EntityFrameworkCore;
 
 namespace PRN221_FinalProject.Pages.Login
 {
@@ -9,6 +11,11 @@ namespace PRN221_FinalProject.Pages.Login
     {
         private readonly Prn221FinalProjectContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public List<DataAccess.Cart> listCart
+        {
+            get; set;
+        }
 
         [BindProperty]
         public string Username { get; set; }
@@ -27,6 +34,7 @@ namespace PRN221_FinalProject.Pages.Login
 
         public void OnGet()
         {
+
         }
 
         public IActionResult OnPost()
@@ -35,14 +43,16 @@ namespace PRN221_FinalProject.Pages.Login
 
             if (account != null)
             {
+                //Save Account id to session
                 _httpContextAccessor.HttpContext.Session.SetInt32("AccountId", account.AccountId);
                 if (account.Type.Equals("Staff"))
                 {
-                    return RedirectToPage("/Index");
+                    return RedirectToPage("/Home/Index");
                 }
                 else
                 {
-                    return RedirectToPage("/home/index");
+
+                    return RedirectToPage("/Home/Index");
                 }
             }
             else
@@ -52,6 +62,7 @@ namespace PRN221_FinalProject.Pages.Login
                 ErrorMessage = "Wrong username or password!";
                 return RedirectToPage("/Login/Index");
             }
+            
         }
     }
 }

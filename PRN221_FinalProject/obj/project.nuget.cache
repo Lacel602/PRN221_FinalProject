@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YLpk8wnN4XcPgrAofkx9150Il4S0to3D/6By2/85+PIIFLwIGQklmoNj7QvA+gfhRDX+AwRauxLPQNMiIvQ+/g==",
+  "dgSpecHash": "v4M9Q9D/fmp6PMl/7aQjAOJkVc/myLS9Tu1lGwjdKookBF9D5PmtqcKh4BaJtFLJmdp1ekDWIT5bpoPGIjvWLg==",
   "success": true,
   "projectFilePath": "D:\\PRN221_FinalProject\\PRN221_FinalProject\\PRN221_FinalProject.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

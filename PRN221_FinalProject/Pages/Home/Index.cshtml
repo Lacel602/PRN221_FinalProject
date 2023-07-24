@@ -4,16 +4,16 @@
     Layout = "_NavLayout";
 }
 
-    <section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(img/hero-banner-alt.jpg)">
-        <div class="container py-5">
-            <div class="row px-4 px-lg-5">
-                <div class="col-lg-6">
-                    <p class="text-muted small text-uppercase mb-2">New Inspiration 2023</p>
-                    <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark" href="shop.html">Browse collections</a>
-                </div>
+<section class="hero pb-3 bg-cover bg-center d-flex align-items-center" style="background: url(img/hero-banner-alt.jpg)">
+    <div class="container py-5">
+        <div class="row px-4 px-lg-5">
+            <div class="col-lg-6">
+                <p class="text-muted small text-uppercase mb-2">New Inspiration 2023</p>
+                <h1 class="h2 text-uppercase mb-3">20% off on new season</h1><a class="btn btn-dark" href="shop.html">Browse collections</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <form method="get" class="mb-3">
     <div style="margin-top: 20px;" class="input-group">
@@ -66,7 +66,11 @@
                         <div class="product-overlay">
                             <ul class="mb-0 list-inline">
                                 <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i class="far fa-heart"></i></a></li>
-                                <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+                                <li class="list-inline-item m-0 p-0">
+                                    <form method="post" asp-page-handler="AddToCart" asp-route-productId="@product.ProductId">
+                                        <button type="submit" class="btn btn-sm btn-dark">AddToCart</button>
+                                    </form>
+                                </li>
                                 <li class="list-inline-item me-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-bs-toggle="modal"><i class="fas fa-expand"></i></a></li>
                             </ul>
                         </div>
@@ -150,22 +154,22 @@
 
 <!-- NEWSLETTER-->
 <div class="container">
-<section class="py-5">
-    <div class="container p-0">
-        <div class="row gy-3">
-            <div class="col-lg-6">
-                <h5 class="text-uppercase">Let's be friends!</h5>
-                <p class="text-sm text-muted mb-0">Give us your email address for exclusive gifts</p>
-            </div>
-            <div class="col-lg-6">
-                <form action="#">
-                    <div class="input-group">
-                        <input class="form-control form-control-lg" type="email" placeholder="Enter your email address" aria-describedby="button-addon2">
-                        <button class="btn btn-dark" id="button-addon2" type="submit">Subscribe</button>
-                    </div>
-                </form>
+    <section class="py-5">
+        <div class="container p-0">
+            <div class="row gy-3">
+                <div class="col-lg-6">
+                    <h5 class="text-uppercase">Let's be friends!</h5>
+                    <p class="text-sm text-muted mb-0">Give us your email address for exclusive gifts</p>
+                </div>
+                <div class="col-lg-6">
+                    <form action="#">
+                        <div class="input-group">
+                            <input class="form-control form-control-lg" type="email" placeholder="Enter your email address" aria-describedby="button-addon2">
+                            <button class="btn btn-dark" id="button-addon2" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
