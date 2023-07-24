@@ -1,0 +1,50 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Admin.EditOrderModel
+@{
+    Layout = "_NavLayout";
+}
+
+<h3>Edit Order</h3>
+
+<form method="post" asp-page-handler="Update" asp-route-orderId="@Model.Order.OrderId">
+    <div class="form-group col-md-6">
+        <label for="updateProductId">Order ID:</label>
+        <input type="number" class="form-control" id="updateProductId" name="OrderInput.OrderId" value="@Model.Order.OrderId" readonly>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="productName">Shiping time estimate:</label> </br>
+        <input class=" form-control" name="OrderInput.ShipDate" type="date" id="shipdate" name="shipdate">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="categoryId">Shipping Company:</label>
+        <select class="form-control" id="categoryId" name="OrderInput.ShipCompanyId" required>
+            <option value="">Select Shipping Company</option>
+            @foreach (var shipCom in Model.shipCompanies)
+            {
+                @if (shipCom.CompanyId == Model.Order.ShipCompanyId)
+                {
+                    <option value="@shipCom.CompanyId" selected>
+                        @shipCom.CompanyName
+                    </option>
+                }
+                else
+                {
+                    <option value="@shipCom.CompanyId">
+                        @shipCom.CompanyName
+                    </option>
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="categoryId">Order Process:</label>
+        <select class="form-control" id="categoryId" name="OrderInput.Status" required>
+            <option value="">Select Shipping Company</option>
+            <option value="Approve" selected>Approve</option>
+            <option value="Reject">Reject</option>
+            <option value="Shipped">Shipped</option>
+            }
+        </select>
+    </div>
+    <button style="margin-top:10px" type="submit" class="btn btn-primary">Edit Order</button>
+</form>

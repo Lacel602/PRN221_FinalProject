@@ -1,0 +1,45 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Home.ViewOrderModel
+@{
+    Layout = "_NavLayout";
+}
+
+<h1 style="margin-top: 30px; text-align:center">Your Orders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Order Date</th>
+            <th>Ship Address</th>
+            <th>Phone</th>
+            <th>Total Money</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        //Object reference not set to an instance of an object
+        {
+            <tr>
+                <td>@order.Customer.FullName</td>
+                <td>@order.OrderDate.Value.ToString("dd-MM-yyyy")</td>
+                <td>@order.ShipAddress</td>
+                <td>@order.Phone</td>
+                <td>$ @order.TotalOrderMoney.00</td>
+                @if (@order.Status == null)
+                {
+                    <td>Pending</td>
+                }
+                else
+                {
+                    <td>@order.Status</td>
+                }
+                <td>
+                    <a style="width:130px; border-radius:5px" type="submit" class="btn btn-warning btn-sm"
+                   asp-page="/Admin/OrderDetail" asp-route-orderId="@order.OrderId">Order Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -27,10 +27,19 @@
                 <td>@order.ShipAddress</td>
                 <td>@order.Phone</td>
                 <td>$ @order.TotalOrderMoney.00</td>
-                <td>Pending</td>
+                @if (@order.Status == null)
+                {
+                    <td>Pending</td>
+                }
+                else 
+                {
+                    <td>@order.Status</td>
+                }
                 <td>
                     <a style="width:130px; border-radius:5px" type="submit" class="btn btn-warning btn-sm"
                    asp-page="/Admin/OrderDetail" asp-route-orderId="@order.OrderId">Order Details</a>
+                    <a style="width:130px; border-radius:5px" type="submit" class="btn btn-secondary btn-sm"
+                   asp-page="/Admin/EditOrder" asp-route-orderId="@order.OrderId">Edit Order</a>
                 </td>
             </tr>
         }
