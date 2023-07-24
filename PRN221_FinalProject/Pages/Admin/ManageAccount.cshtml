@@ -1,0 +1,74 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Admin.ManageAccountModel
+@{
+    Layout = "_NavLayout";
+}
+<h1 style="margin-top: 30px">User Account Management</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Type</th>
+            <th>Change</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model.Accounts)
+        {
+            <tr>
+                <td>@account.AccountId</td>
+                <td>@account.Username</td>
+                <td>@account.Password</td>
+                <td>@account.Address</td>
+                <td>@account.Phone</td>
+                <td>@account.Email</td>
+                <td>
+                    @if (account.Type == "Staff")
+                    {
+                        <span class="badge bg-success text-white">@account.Type</span>
+                    }
+                    else if (account.Type == "Customer")
+                    {
+                        <span class="badge bg-primary text-white">@account.Type</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary text-white">@account.Type</span>
+                    }
+                </td>
+                <td>
+                    <form method="post" asp-page-handler="UpdateType" asp-route-accountId="@account.AccountId">
+                        <div class="form-group">
+                            <label for="typeSelect">Select Type:</label>
+                            <select class="form-control" id="typeSelect" asp-for="inputModel.Type">
+                                <option value="Staff">Staff</option>
+                                <option value="Customer">Customer</option>
+                            </select>
+                        </div>
+                        <button style="margin-top:5px" type="submit" class="btn btn-success btn-sm">Update</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-accountId="@account.AccountId">
+                        <button style="width:73px" type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>  
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (TempData["ErrorMess"] != null)
+{
+    <div class="alert alert-danger" role="alert">@TempData["ErrorMess"]</div>
+}
+@if (TempData["Mess"] != null)
+{
+    <div class="alert alert-success" role="alert">@TempData["Mess"]</div>
+}

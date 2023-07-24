@@ -33,12 +33,9 @@ namespace PRN221_FinalProject.Pages.Login
             // Example: Save the entered user information to the database
             List<Account> Accounts = _context.Accounts.ToList();
             if (checkAccount(Username, Accounts))
-            {
-                int lastId = Accounts.Max(a => a.AccountId);
-                lastId++;
+            {         
                 var account = new Account
                 {
-                    AccountId = lastId,
                     Username = Username,
                     Password = Password,
                     FullName = FullName,
