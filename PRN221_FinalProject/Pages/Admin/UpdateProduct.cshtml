@@ -6,18 +6,33 @@
 
 <h3>Update Product</h3>
 
-<form method="post" asp-page-handler="Update">
+<form method="post" asp-page-handler="Update" asp-route-productId="@Model.product.ProductId">
+    <div class="form-group">
+        <label for="updateProductId">Product ID:</label>
+        <input type="number" class="form-control" id="updateProductId" name="ProductInput.ProductId" value="@Model.product.ProductId" readonly required>
+    </div>
     <div class="form-group">
         <label for="updateProductName">Product Name:</label>
         <input type="text" class="form-control" id="updateProductName" name="ProductInput.ProductName" value="@Model.product.ProductName" required>
     </div>
     <div class="form-group">
         <label for="categoryId">Category:</label>
-        <select class="form-control" id="categoryId" name="ProductInput.CategoryId" value="@Model.product.CategoryId" required>
+        <select class="form-control" id="categoryId" name="ProductInput.CategoryId" required>
             <option value="">Select Category</option>
             @foreach (var category in Model.Categories)
             {
-                <option value="@category.CategoryId">@category.CategoryName</option>
+                @if (category.CategoryId == Model.product.CategoryId)
+                {
+                    <option value="@category.CategoryId" selected>
+                        @category.CategoryName
+                    </option>
+                }
+                else
+                {
+                    <option value="@category.CategoryId">
+                        @category.CategoryName
+                    </option>
+                }          
             }
         </select>
     </div>
@@ -35,7 +50,7 @@
     </div>
     <div class="form-group">
         <label for="description">Description:</label>
-        <input type="text" class="form-control" id="description" name="ProductInput.Description" value="@Model.product.QuantityInStock" required>
+        <input type="text" class="form-control" id="description" name="ProductInput.Description" value="@Model.product.Description" required>
     </div>
     <button type="submit" class="btn btn-primary">Update Product</button>
 </form>

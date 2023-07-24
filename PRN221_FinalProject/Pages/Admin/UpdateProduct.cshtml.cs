@@ -27,6 +27,11 @@ namespace PRN221_FinalProject.Pages.Admin
                 {
                     Categories = _context.Categories.ToList();
                     product = _context.Products.Find(productId);
+                    if (product == null)
+                    {
+                        TempData["ErrorMessUpdate"] = "Product not found!";
+                        return RedirectToPage("/Admin/ManageProduct");
+                    }
                     return Page();
                 }
                 else
@@ -46,7 +51,7 @@ namespace PRN221_FinalProject.Pages.Admin
 
         public IActionResult OnPostUpdate(int productId)
         {
-            var product = _context.Products.Find(productId);
+            product = _context.Products.Find(productId);
             if (product == null)
             {
                 string errorMessage = "Product not found!";

@@ -36,7 +36,7 @@ namespace PRN221_FinalProject.Pages.Admin
                 lastId++;
                 var product = new Product
                 {
-                    ProductId = lastId,
+                    //ProductId = lastId,
                     ProductName = productInput.ProductName,
                     CategoryId = productInput.CategoryId,
                     UnitPrice = productInput.UnitPrice,

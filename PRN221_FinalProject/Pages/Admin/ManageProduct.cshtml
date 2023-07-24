@@ -10,10 +10,11 @@
         <tr>
             <th>Product ID</th>
             <th>Product Name</th>
-            <th>Supplier ID</th>
             <th>Category ID</th>
             <th>Unit Price</th>
             <th>Product Image</th>
+            <th>QuantityIS</th>
+            <th style="width=250px">Description</th>
             <th></th>
         </tr>
     </thead>
@@ -23,10 +24,11 @@
             <tr>
                 <td>@product.ProductId</td>
                 <td>@product.ProductName</td>
-                @*<td>@product.SupplierId</td>*@
                 <td>@product.CategoryId</td>
                 <td>@string.Format("{0:N0} VND", product.UnitPrice)</td>
                 <td style="width:150px"><img class="img-fluid w-100" src="@product.ProductImage" alt="..."></td>
+                <td>@product.QuantityInStock</td>
+                <td>@product.Description</td>
                 <td>
                     <form method="post" asp-page-handler="Delete" asp-route-productId="@product.ProductId">
                         <button style="width:73px" type="submit" class="btn btn-danger btn-sm">Delete</button>
