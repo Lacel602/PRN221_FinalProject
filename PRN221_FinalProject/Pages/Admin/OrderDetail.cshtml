@@ -5,3 +5,34 @@
 }
 
 <h1 style="margin-top: 30px">Order Details</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Product ID</th>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Total Money</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.OrderDetails)
+        //Object reference not set to an instance of an object
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.ProductId</td>
+                    <td style="width:150px; height:150px">
+                    <img class="img-fluid w-100" src="@order.Product.ProductImage" alt="...">
+                </td>
+                <td>@order.Product.ProductName</td>
+                <td>@order.Quantity</td>
+                <td>@order.TotalMoney</td>
+            </tr>
+        }
+    </tbody>
+</table>

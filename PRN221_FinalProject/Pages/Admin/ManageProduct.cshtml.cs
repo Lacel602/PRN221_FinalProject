@@ -63,7 +63,7 @@ namespace PRN221_FinalProject.Pages.Admin
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
-                string Message = "Delete product Succesfully";
+                string Message = "Delete details Succesfully";
                 TempData["Mess"] = Message;
                 return RedirectToPage();
             }
@@ -82,7 +82,7 @@ namespace PRN221_FinalProject.Pages.Admin
         //        Products = _context.Products.ToList();
         //        int lastId = Products.Max(p => p.ProductId);
         //        lastId++;
-        //        var product = new Product
+        //        var details = new Product
         //        {
         //            ProductId = lastId,
         //            ProductName = productInput.ProductName,
@@ -91,10 +91,10 @@ namespace PRN221_FinalProject.Pages.Admin
         //            ProductImage = productInput.ProductImage
         //        };
 
-        //        _context.Products.Add(product);
+        //        _context.Products.Add(details);
         //        _context.SaveChanges();
 
-        //        string Message = "Add new product Succesfully";
+        //        string Message = "Add new details Succesfully";
         //        TempData["Mess"] = Message;
 
         //        return RedirectToPage("/Admin/ManageProduct");
@@ -109,8 +109,8 @@ namespace PRN221_FinalProject.Pages.Admin
 
         //public IActionResult OnPostUpdate(int productId)
         //{
-        //    var product = _context.Products.Find(productId);
-        //    if (product == null)
+        //    var details = _context.Products.Find(productId);
+        //    if (details == null)
         //    {
         //        string errorMessage = "Product not found!";
         //        TempData["ErrorMessUpdate"] = errorMessage;
@@ -118,10 +118,10 @@ namespace PRN221_FinalProject.Pages.Admin
         //    }
         //    else
         //    {
-        //        product.ProductName = ProductInput.ProductName;
-        //        product.CategoryId = ProductInput.CategoryId;
-        //        product.UnitPrice = ProductInput.UnitPrice;
-        //        product.ProductImage = ProductInput.ProductImage;
+        //        details.ProductName = ProductInput.ProductName;
+        //        details.CategoryId = ProductInput.CategoryId;
+        //        details.UnitPrice = ProductInput.UnitPrice;
+        //        details.ProductImage = ProductInput.ProductImage;
 
         //        _context.SaveChanges();
 

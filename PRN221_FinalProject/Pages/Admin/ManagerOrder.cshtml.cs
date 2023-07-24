@@ -14,7 +14,7 @@ namespace PRN221_FinalProject.Pages.Admin
             _context = context;
         }
 
-        public List<OrderDetail> Details { get; set; }
+        public List<Order> Orders { get; set; }
         public IActionResult OnGet()
         {
             var accountId = HttpContext.Session.GetInt32("AccountId");
@@ -23,7 +23,7 @@ namespace PRN221_FinalProject.Pages.Admin
                 var account = _context.Accounts.FirstOrDefault(a => a.AccountId == accountId);
                 if (account.Type.Contains("Staff"))
                 {
-                    Details = _context.OrderDetails.Include(m => m.Product).ToList();
+                    Orders = _context.Orders.Include(m => m.Customer).ToList();
                     return Page();
                 }
                 else
