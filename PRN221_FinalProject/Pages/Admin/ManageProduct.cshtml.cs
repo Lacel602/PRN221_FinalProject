@@ -43,7 +43,7 @@ namespace PRN221_FinalProject.Pages.Admin
             }
             else
             {
-                string Message = "Your account is not permitted to edit!";
+                string Message = "You need to login to use this!";
                 TempData["Mess"] = Message;
                 return RedirectToPage("/login/index");
             }
@@ -69,74 +69,75 @@ namespace PRN221_FinalProject.Pages.Admin
             }
         }
 
-        public IActionResult OnPostAdd(ProductInputModel productInput)
-        {
-            if (!ModelState.IsValid)
-            {
-                string errorMessage = "Some field is not valid!";
-                TempData["ErrorMessAdd"] = errorMessage;
-                return RedirectToPage();
-            }
-            else
-            {
-                Products = _context.Products.ToList();
-                int lastId = Products.Max(p => p.ProductId);
-                lastId++;
-                var product = new Product
-                {
-                    ProductId = lastId,
-                    ProductName = productInput.ProductName,
-                    CategoryId = productInput.CategoryId,
-                    UnitPrice = productInput.UnitPrice,
-                    ProductImage = productInput.ProductImage
-                };
+        //public IActionResult OnPostAdd(ProductInputModel productInput)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        string errorMessage = "Some field is not valid!";
+        //        TempData["ErrorMessAdd"] = errorMessage;
+        //        return RedirectToPage();
+        //    }
+        //    else
+        //    {
+        //        Products = _context.Products.ToList();
+        //        int lastId = Products.Max(p => p.ProductId);
+        //        lastId++;
+        //        var product = new Product
+        //        {
+        //            ProductId = lastId,
+        //            ProductName = productInput.ProductName,
+        //            CategoryId = productInput.CategoryId,
+        //            UnitPrice = productInput.UnitPrice,
+        //            ProductImage = productInput.ProductImage
+        //        };
 
-                _context.Products.Add(product);
-                _context.SaveChanges();
+        //        _context.Products.Add(product);
+        //        _context.SaveChanges();
 
-                string Message = "Add new product Succesfully";
-                TempData["Mess"] = Message;
+        //        string Message = "Add new product Succesfully";
+        //        TempData["Mess"] = Message;
 
-                return RedirectToPage("/Admin/ManageProduct");
-            }
+        //        return RedirectToPage("/Admin/ManageProduct");
+        //    }
 
-        }
+        //}
 
         public IActionResult OnPostUpdate(int productId)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
-
-            var product = _context.Products.Find(productId);
-            if (product == null)
-            {
-                string errorMessage = "Product not found!";
-                TempData["ErrorMessUpdate"] = errorMessage;
-                return RedirectToPage();
-            }
-            else
-            {
-                product.ProductName = ProductInput.ProductName;
-                product.CategoryId = ProductInput.CategoryId;
-                product.UnitPrice = ProductInput.UnitPrice;
-                product.ProductImage = ProductInput.ProductImage;
-
-                _context.SaveChanges();
-
-                return RedirectToPage();
-            }
+            return RedirectToPage("/Admin/UpdateProduct", new { productId });
         }
+
+        //public IActionResult OnPostUpdate(int productId)
+        //{
+        //    var product = _context.Products.Find(productId);
+        //    if (product == null)
+        //    {
+        //        string errorMessage = "Product not found!";
+        //        TempData["ErrorMessUpdate"] = errorMessage;
+        //        return RedirectToPage();
+        //    }
+        //    else
+        //    {
+        //        product.ProductName = ProductInput.ProductName;
+        //        product.CategoryId = ProductInput.CategoryId;
+        //        product.UnitPrice = ProductInput.UnitPrice;
+        //        product.ProductImage = ProductInput.ProductImage;
+
+        //        _context.SaveChanges();
+
+        //        return RedirectToPage();
+        //    }
+        //}
     }
 
     public class ProductInputModel
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public int SupplierId { get; set; }
+        public int QuantityInStock { get; set; }
         public int CategoryId { get; set; }
         public decimal UnitPrice { get; set; }
         public string ProductImage { get; set; }
+        public string Description { get; set; }
     }
 }

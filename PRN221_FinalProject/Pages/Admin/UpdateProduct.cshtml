@@ -1,0 +1,46 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Admin.UpdateProductModel
+@{
+    Layout = "_NavLayout";
+}
+
+<h3>Update Product</h3>
+
+<form method="post" asp-page-handler="Update">
+    <div class="form-group">
+        <label for="updateProductName">Product Name:</label>
+        <input type="text" class="form-control" id="updateProductName" name="ProductInput.ProductName" value="@Model.product.ProductName" required>
+    </div>
+    <div class="form-group">
+        <label for="categoryId">Category:</label>
+        <select class="form-control" id="categoryId" name="ProductInput.CategoryId" value="@Model.product.CategoryId" required>
+            <option value="">Select Category</option>
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.CategoryId">@category.CategoryName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="updateUnitPrice">Unit Price:</label>
+        <input type="number" step="0.01" class="form-control" id="updateUnitPrice" name="ProductInput.UnitPrice" value="@Model.product.UnitPrice" required>
+    </div>
+    <div class="form-group">
+        <label for="updateProductImage">Product Image:</label>
+        <input type="text" class="form-control" id="updateProductImage" name="ProductInput.ProductImage" value="@Model.product.ProductImage" required>
+    </div>
+    <div class="form-group">
+        <label for="quantityInStock">Quantity in stock:</label>
+        <input type="number" class="form-control" id="quantityInStock" name="ProductInput.QuantityInStock" value="@Model.product.QuantityInStock" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" name="ProductInput.Description" value="@Model.product.QuantityInStock" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Product</button>
+</form>
+@if (TempData["ErrorMessUpdate"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessUpdate"]</div>
+}
+<!--Modal update product-->

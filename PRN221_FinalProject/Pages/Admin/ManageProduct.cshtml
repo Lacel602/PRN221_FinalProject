@@ -19,7 +19,6 @@
     </thead>
     <tbody>
         @foreach (var product in Model.Products)
-        //Object reference not set to an instance of an object
         {
             <tr>
                 <td>@product.ProductId</td>
@@ -32,10 +31,9 @@
                     <form method="post" asp-page-handler="Delete" asp-route-productId="@product.ProductId">
                         <button style="width:73px" type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
-                    @*<form method="post" asp-page-handler="Update" asp-route-productId="@product.ProductId">
-                <button style="margin-top:5px" type="submit" class="btn btn-success btn-sm btn-update">Update</button>
-                </form>*@
-                    <button class="btn btn-success btn-sm btn-updateProduct" data-bs-target="#updateModal" data-product-id="@product.ProductId">Update</button>
+                    <form method="post" asp-page-handler="Update" asp-route-productId="@product.ProductId">
+                        <button style="margin-top:5px" type="submit" class="btn btn-success btn-sm">Update</button>
+                    </form>
                 </td>
             </tr>
         }
@@ -88,74 +86,4 @@
 {
     <div class="alert alert-danger">@TempData["ErrorMessUpdate"]</div>
 }*@
-<!--Modal update product-->
-<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Cập nhật sản phẩm</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Trường nhập liệu để cập nhật thông tin sản phẩm -->
-                <div class="form-group">
-                    <label for="productName">Tên sản phẩm:</label>
-                    <input type="text" class="form-control" id="productName" />
-                </div>
-                <div class="form-group">
-                    <label for="unitPrice">Giá sản phẩm:</label>
-                    <input type="number" class="form-control" id="unitPrice" />
-                </div>
-                <!-- Thêm các trường nhập liệu khác (nếu cần) -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-primary" id="btnSaveChanges">Lưu thay đổi</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Đoạn mã JavaScript -->
-<script>
-    $(document).ready(function () {
-        // Xử lý sự kiện khi nút cập nhật được bấm
-        $(".btn-updateProduct").click(function () {
-            var productId = $(this).data("product-id");
-
-            // Hiển thị modal cập nhật sản phẩm
-            $("#updateModal").modal("show");
-
-            // Gọi hàm để điền thông tin sản phẩm hiện tại vào modal
-            //fillProductData(productId);
-        });
-
-        // Xử lý sự kiện khi nút Lưu thay đổi được bấm
-        $("#btnSaveChanges").click(function () {
-            var productId = $(this).data("product-id");
-
-            // Gọi hàm để cập nhật thông tin sản phẩm
-            updateProduct(productId);
-        });
-
-        // Hàm để điền thông tin sản phẩm hiện tại vào modal
-        function fillProductData(productId) {
-            // Tùy chỉnh logic để lấy thông tin sản phẩm hiện tại từ productId và điền vào modal
-            // Ví dụ: có thể gọi API để lấy thông tin sản phẩm từ server và điền vào modal
-            // Sau khi lấy thông tin sản phẩm, điền giá trị vào các trường nhập liệu tương ứng
-            // Ví dụ: $("#productName").val(productNameFromServer);
-            //      $("#unitPrice").val(unitPriceFromServer);
-        }
-
-        // Hàm để cập nhật thông tin sản phẩm
-        function updateProduct(productId) {
-            // Đọc giá trị từ các trường nhập liệu trong modal
-            var productName = $("#productName").val();
-            var unitPrice = $("#unitPrice").val();
-
-            // Gọi API hoặc xử lý logic để cập nhật thông tin sản phẩm với productId, productName và unitPrice
-            // Ví dụ: có thể gửi yêu cầu cập nhật thông qua API hoặc xử lý logic cập nhật trong Razor Page
-        }
-    });
-</script>
 
