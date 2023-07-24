@@ -37,6 +37,7 @@ public partial class Prn221FinalProjectContext : DbContext
         IConfigurationRoot configuration = builder.Build();
         optionsBuilder.UseSqlServer(configuration.GetConnectionString("MyCnn"));
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Account>(entity =>

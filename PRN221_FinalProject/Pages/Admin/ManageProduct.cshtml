@@ -14,7 +14,7 @@
             <th>Unit Price</th>
             <th>Product Image</th>
             <th>QuantityIS</th>
-            <th style="width=250px">Description</th>
+            <th style="width:250px">Description</th>
             <th></th>
         </tr>
     </thead>
@@ -26,7 +26,9 @@
                 <td>@product.ProductName</td>
                 <td>@product.CategoryId</td>
                 <td>@string.Format("{0:N0} VND", product.UnitPrice)</td>
-                <td style="width:150px"><img class="img-fluid w-100" src="@product.ProductImage" alt="..."></td>
+                <td style="width:150px; height:150px">
+                     <img class="img-fluid w-100" src="@product.ProductImage" alt="...">
+                </td>
                 <td>@product.QuantityInStock</td>
                 <td>@product.Description</td>
                 <td>
