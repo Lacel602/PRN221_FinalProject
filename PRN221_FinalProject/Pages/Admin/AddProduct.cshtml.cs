@@ -48,7 +48,7 @@ namespace PRN221_FinalProject.Pages.Admin
                 _context.Products.Add(product);
                 _context.SaveChanges();
 
-                string Message = "Add new product Succesfully";
+                string Message = "Add new details Succesfully";
                 TempData["Mess"] = Message;
 
                 return RedirectToPage("/Admin/ManageProduct");
