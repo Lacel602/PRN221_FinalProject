@@ -32,9 +32,8 @@ namespace PRN221_FinalProject.Pages.Admin
                     orderId = id;
                     Order = new PRN221_FinalProject.DataAccess.Order();
                     Details = new PRN221_FinalProject.DataAccess.OrderDetail();
-                    var orderdetails = _context.OrderDetails.ToList().SingleOrDefault(o => o.OrderId == id);
-                    var order = _context.Orders.Include(m => m.Customer).ToList().FirstOrDefault(o => o.OrderId == id);
-                    Order.Customer.FullName = order.Customer.FullName;
+                    var orderdetails = _context.OrderDetails.Include(m => m.Product).ToList().SingleOrDefault(o => o.OrderId == id);
+                    var order = _context.Orders.ToList().FirstOrDefault(o => o.OrderId == id);
                     Order.OrderDate = order.OrderDate;
                     Order.ShipAddress = order.ShipAddress;
                     Order.Phone = order.Phone;
