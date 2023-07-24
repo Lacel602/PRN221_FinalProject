@@ -31,16 +31,30 @@
                     <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <!-- Link--><a class="nav-link" href="/Home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                            <!-- Link--><a class="nav-link" href="/Admin/ManageProduct">Product Management</a>
-                            </li>
-                            <li class="nav-item dropdown">
+                            @if (Context.Session.GetInt32("AccountId") != null)
+                        {
+                            var accountId = Context.Session.GetInt32("AccountId");
+                            var customer = _context.Accounts.FirstOrDefault(c => c.AccountId == accountId);
+                            @if (customer != null)
+                            {
+                                <li class="nav-item">
+                                    <!-- Link--><a class="nav-link" href="/Admin/ManageProduct">Product Manage</a>
+                                </li>
+                                <li class="nav-item">
+                                    <!-- Link--><a class="nav-link" href="/Admin/ManageOrder">Order Manage</a>
+                                </li>
+                            }
+                            else
+                            {
+
+                            }
+
+                        }
+
+                            @*<li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <div class="dropdown-menu mt-3 shadow-sm" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="index.html">Homepage</a><a class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a class="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>
-                            </li>
+                            </li>*@
                         </ul>
                         <ul class="navbar-nav ms-auto">
                             @if (Context.Session.GetInt32("AccountId") != null)

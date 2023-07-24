@@ -1,0 +1,35 @@
+﻿@page "/Admin/ManageOrder"
+@model PRN221_FinalProject.Pages.Admin.ManagerOrderModel
+@{
+    Layout = "_NavLayout";
+}
+
+<h1 style="margin-top: 30px">Manage Orders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Details)
+        //Object reference not set to an instance of an object
+        {
+            <tr>
+                <td>@order.Product.ProductName</td>
+                <td style="width:150px"><img class="img-fluid w-100" src="@order.Product.ProductImage" alt="..."></td>
+                <td>@order.Quantity</td>
+                <td>Pending</td>
+                <td>
+                    <a style="width:130px; border-radius:5px" type="submit" class="btn btn-warning btn-sm"
+                    asp-page="/Admin/OrderDetail" asp-route-id="@order.OrderId">Order Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
