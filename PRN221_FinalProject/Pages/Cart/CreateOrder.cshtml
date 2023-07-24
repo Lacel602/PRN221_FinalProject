@@ -1,0 +1,34 @@
+﻿@page
+@model PRN221_FinalProject.Pages.Cart.CreateOrderModel
+@{
+    Layout = "_NavLayout";
+}
+<h1 style="margin-top: 30px;">Create Order</h1>
+<br>
+<h5>Please fill or update these field for shipping</h5>
+<hr />
+<br />
+<form method="post" asp-page-handler="" asp-route-accountId="@Model.accountId">
+    <div class="form-group">
+        <label for="fullName">Contact name:</label>
+        <input type="text" class="form-control" id="fullName" name="" value="@Model.user.FullName" required>
+    </div>
+    <div class="form-group">
+        <label for="shipAddress">Ship address:</label>
+        <input type="text" class="form-control" id="shipAddress" name="OrderInput.ShipAddress" value="@Model.user.Address" required>
+    </div>
+    <div class="form-group">
+        <label for="phoneNumber">Phone:</label>
+        <input type="text" class="form-control" id="phoneNumber" name="OrderInput.Phone" value="@Model.user.Phone" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" name="" value="@Model.user.Email" required>
+    </div>
+    <div class="form-group">
+        <label for="totalMoney">Total money:</label>
+        <input type="text" class="form-control" id="totalMoney" name="" value="@Model.totalMoney" readonly>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-info">Order</button>
+</form>

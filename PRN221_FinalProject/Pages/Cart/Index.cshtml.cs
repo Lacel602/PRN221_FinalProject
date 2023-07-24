@@ -21,12 +21,18 @@ namespace PRN221_FinalProject.Pages.Cart
         }
         public List<DataAccess.Cart> Carts { get; set; }
         public List<DataAccess.Product> Products { get; set; }
+        public decimal? totalMoney { get; set; }
 
         public int? accountId { get; set; }
         public void OnGet()
         {
             accountId = _httpContextAccessor.HttpContext.Session.GetInt32("AccountId");
             Carts = _context.Carts.Where(c => c.AccountId == accountId).Include(c => c.Product).ToList();
+            totalMoney = 0;
+            foreach (var item in Carts)
+            {
+                totalMoney += item.Quantity * item.Product.UnitPrice;
+            }
         }
 
         public IActionResult OnPostQuantityEdit(int productId, int quantityChange)
@@ -52,7 +58,7 @@ namespace PRN221_FinalProject.Pages.Cart
             else
             {
                 string errorMessage = "Product not found!";
-                TempData["ErrorMessUpdate"] = errorMessage;
+                TempData["ErrorMess"] = errorMessage;
             }
             return RedirectToPage();
         }

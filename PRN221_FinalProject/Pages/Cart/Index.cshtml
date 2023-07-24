@@ -8,7 +8,7 @@
 }
 <h1 style="margin-top: 30px; text-align:center">Your Cart</h1>
 
-@if (Model.Carts != null)
+@if (@Model.Carts != null)
 {
     <table class="table">
         <thead>
@@ -49,7 +49,17 @@
             }
         </tbody>
     </table>
-
+    <br />
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h5>Totalmoney:</h5>
+            </div>
+            <div class="col-auto">
+                <h5>@Model.totalMoney VND</h5>
+            </div>
+        </div>
+    </div>
 }
 else
 {
@@ -58,8 +68,19 @@ else
     <h4>Your cart is empty</h4>
 }
 
-@if (TempData["ErrorMessUpdate"] != null)
+@if (TempData["ErrorMess"] != null)
 {
-    <div class="alert alert-danger">@TempData["ErrorMessUpdate"]</div>
+    <div class="alert alert-danger">@TempData["ErrorMess"]</div>
 }
-<a href="/Home/Index" class="btn btn-primary">Return to home</a>
+<hr />
+<br />
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col-auto">
+            <a href="/Home/Index" class="btn btn-primary">Return to home</a>
+        </div>
+        <div class="col-auto">
+            <a href="/Cart/CreateOrder" class="btn btn-info">Order</a>
+        </div>
+    </div>
+</div>
